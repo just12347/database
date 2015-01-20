@@ -68,7 +68,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#">Update</a>
+							<a href="update.php">Update</a>
 						</li>
 					</ul>
 				</div>

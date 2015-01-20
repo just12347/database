@@ -23,7 +23,7 @@
 							<a href="sec.php">Sec</a>
 						</li>
 						<li>
-							<a href="guide.php">Guide</a>
+							<a href="Ranking.php">Ranking</a>
 						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ranking<strong class="caret"></strong></a>
@@ -43,9 +43,9 @@
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-right" role="search" action="search.php">
+					<form class="navbar-form navbar-right" role="search">
 						<div class="form-group">
-							<input type="text" class="form-control" />>
+							<input type="text" class="form-control" />
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-left">
@@ -54,21 +54,44 @@
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Style<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="express.php">抒情</a>
+									<a href="#">抒情</a>
 								</li>
 								<li>
-									<a href="rock.php">搖滾</a>
+									<a href="#">搖滾</a>
 								</li>
 								<li>
-									<a href="rnb.php">R&B</a>
+									<a href="#">R&B</a>
 								</li>
 								<li>
-									<a href="brainwash.php">洗腦</a>
+									<a href="#">洗腦</a>
 								</li>
 							</ul>
 						</li>
-						<li>
-							<a href="update.php">Update</a>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Update<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="insertsong.php">歌曲</a>
+								</li>
+								<li>
+									<a href="insertsinger.php">歌手</a>
+								</li>
+								<li>
+									<a href="insertcomposer.php">作曲人</a>
+								</li>
+								<li>
+									<a href="insertlyricist.php">作詞人</a>
+								</li>
+								<li>
+									<a href="insertalbum.php">專輯</a>
+								</li>
+								<li>
+									<a href="insertstyle.php">風格</a>
+								</li>
+								<li>
+									<a href="insertcompany.php">公司</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</div>
@@ -90,7 +113,7 @@
 					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
 				</p>
 				<p>
-					<a class="btn btn-primary btn-large" href="guide.php">Learn more</a>
+					<a class="btn btn-primary btn-large" href="#">Learn more</a>
 				</p>
 			</div>
 		</div>

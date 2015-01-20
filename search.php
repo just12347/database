@@ -68,19 +68,25 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#">Update</a>
+							<a href="update.php">Update</a>
 						</li>
 					</ul>
 				</div>
 				
 			</nav>
-			<div class="row clearfix">
+		<div class="row clearfix">
 		<div class="col-md-12 column">
 			<h3>
 				hello
 			</h3>
+			<h3>
+				Insertion success!
+			</h3>
+			<a href="index.php" class="btn" type="button">Back to Index</a>
+			<a href="update.php" class="btn" type="button">Continue Insertion</a>
 			</div>
 		</div>
+
 
 			
 		

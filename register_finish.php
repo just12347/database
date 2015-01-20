@@ -110,6 +110,6 @@ if($M_name != null && $date != null && $length != null)
 else
 {
         echo '主要資料(歌名, 發行時間, 長度) 不可為空!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=update.php>';
+        // echo '<meta http-equiv=REFRESH CONTENT=2;url=update.php>';
 }
 ?>

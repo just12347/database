@@ -86,7 +86,7 @@
 			</div>
 		<div class="col-md-12 column">
 			<h3>
-				English top10
+				English top rank
 			</h3>
 			<table class="table table-striped table-hover">
 				<thead>
@@ -95,7 +95,7 @@
 							Rank
 						</th>
 						<th>
-							Song 
+							Music name
 						</th>
 						<th>
 							Singer
@@ -107,19 +107,23 @@
 				</thead>
 				<tbody>
 					<?php
-					for($i=0;$i<5;$i++)
-					{
+					include("mysql_connect.inc.php");
+				    $str="SELECT R.排名, M.歌名, S.名稱, ST.名稱  FROM 歐美排行榜 AS R, 歌曲 AS M, 歌手或團體 AS S, 風格 AS ST WHERE R.歌曲ID = M.歌曲ID AND M.演唱者ID = S.演唱者ID AND M.風格ID = ST.風格ID";
+				    $list =mysql_query($str);
+				    while($va = mysql_fetch_row($list))
+				    {
+				    	echo    '<tr><td>';
+						echo 	$va[0];
+						echo    '</td><td>';
+						echo	$va[1];
+						echo    '</td><td>';
+						echo	$va[2];
+						echo    '</td><td>';
+						echo    $va[3];
+						echo	'</td></tr>';
+				    }
+					?>
 
-					echo    '<tr><td>';
-					echo 	$i+1;		
-					echo    '</td><td>';
-					echo	'TB - Monthly';
-					echo    '</td><td>';
-					echo	'01/04/2012';
-					echo    '</td><td>';
-					echo    'Default';
-					echo	'</td></tr>';
-					}	?>
 				</tbody>
 			</table>
 		</div>

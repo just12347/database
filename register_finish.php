@@ -1,14 +1,28 @@
-<?php session_start(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 include("mysql_connect.inc.php");
 
-$id = $_POST['id'];
-$pw = $_POST['pw'];
-$pw2 = $_POST['pw2'];
-$telephone = $_POST['telephone'];
-$address = $_POST['address'];
-$other = $_POST['other'];
+$M_name = $_POST['M_name'];
+$company = $_POST['company'];
+$C_name = $_POST['C_name'];
+$C_country = $_POST['C_country'];
+$singer = $_POST['singer'];
+$S_name = $_POST['S_name'];
+$S_country = $_POST['S_country'];
+$lyricist = $_POST['lyricist'];
+$L_name = $_POST['L_name'];
+$L_country = $_POST['L_country'];
+$composer = $_POST['composer'];
+$Cr_name = $_POST['Cr_name'];
+$Cr_country = $_POST['Cr_country'];
+$date = $_POST['date'];
+$length = $_POST['length'];
+
+if(){
+        pp
+}
+
+
 
 //判斷帳號密碼是否為空值
 //確認密碼輸入的正確性

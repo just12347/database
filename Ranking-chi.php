@@ -23,7 +23,7 @@
 							<a href="sec.php">Sec</a>
 						</li>
 						<li>
-							<a href="Ranking.php">Ranking</a>
+							<a href="guide.php">Guide</a>
 						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ranking<strong class="caret"></strong></a>
@@ -54,16 +54,16 @@
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Style<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="#">抒情</a>
+									<a href="express.php">抒情</a>
 								</li>
 								<li>
-									<a href="#">搖滾</a>
+									<a href="rock.php">搖滾</a>
 								</li>
 								<li>
-									<a href="#">R&B</a>
+									<a href="rnb.php">R&B</a>
 								</li>
 								<li>
-									<a href="#">洗腦</a>
+									<a href="brainwash.php">洗腦</a>
 								</li>
 							</ul>
 						</li>

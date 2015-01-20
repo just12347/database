@@ -22,7 +22,7 @@
 						<li >
 							<a href="sec.php">Sec</a>
 						</li>
-						<li>
+						<li >
 							<a href="guide.php">Guide</a>
 						</li>
 						<li class="dropdown">
@@ -43,7 +43,7 @@
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-right" role="search">
+					<form class="navbar-form navbar-right" role="search" action="search.php">
 						<div class="form-group">
 							<input type="text" class="form-control" />
 						</div> <button type="submit" class="btn btn-default">Submit</button>
@@ -74,19 +74,17 @@
 				</div>
 				
 			</nav>
-			
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="row clearfix">
+			<div class="row clearfix">
 		<div class="col-md-12 column">
 			<h3>
 				hello
 			</h3>
 			</div>
+		</div>
+
 		<div class="col-md-12 column">
 			<h3>
-				English top10
+				R&B top10
 			</h3>
 			<table class="table table-striped table-hover">
 				<thead>
@@ -121,11 +119,11 @@
 					echo	'</td></tr>';
 					}	?>
 				</tbody>
-			</table>
-		</div>
+			</table>	
+		
+	
+	
 
-	</div>
-</div>
 
 </div>
 

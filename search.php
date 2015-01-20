@@ -22,7 +22,7 @@
 						<li >
 							<a href="sec.php">Sec</a>
 						</li>
-						<li>
+						<li >
 							<a href="guide.php">Guide</a>
 						</li>
 						<li class="dropdown">
@@ -43,7 +43,7 @@
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-right" role="search">
+					<form class="navbar-form navbar-right" role="search" action="search.php">
 						<div class="form-group">
 							<input type="text" class="form-control" />
 						</div> <button type="submit" class="btn btn-default">Submit</button>
@@ -74,58 +74,19 @@
 				</div>
 				
 			</nav>
-			
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="row clearfix">
+			<div class="row clearfix">
 		<div class="col-md-12 column">
 			<h3>
 				hello
 			</h3>
 			</div>
-		<div class="col-md-12 column">
-			<h3>
-				English top10
-			</h3>
-			<table class="table table-striped table-hover">
-				<thead>
-					<tr>
-						<th>
-							Rank
-						</th>
-						<th>
-							Song 
-						</th>
-						<th>
-							Singer
-						</th>
-						<th>
-							Style
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-					for($i=0;$i<5;$i++)
-					{
-
-					echo    '<tr><td>';
-					echo 	$i+1;		
-					echo    '</td><td>';
-					echo	'TB - Monthly';
-					echo    '</td><td>';
-					echo	'01/04/2012';
-					echo    '</td><td>';
-					echo    'Default';
-					echo	'</td></tr>';
-					}	?>
-				</tbody>
-			</table>
 		</div>
 
-	</div>
-</div>
+			
+		
+	
+	
+
 
 </div>
 

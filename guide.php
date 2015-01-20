@@ -22,7 +22,7 @@
 						<li >
 							<a href="sec.php">Sec</a>
 						</li>
-						<li>
+						<li class="active">
 							<a href="guide.php">Guide</a>
 						</li>
 						<li class="dropdown">
@@ -43,7 +43,7 @@
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-right" role="search">
+					<form class="navbar-form navbar-right" role="search" action="search.php">
 						<div class="form-group">
 							<input type="text" class="form-control" />
 						</div> <button type="submit" class="btn btn-default">Submit</button>
@@ -74,64 +74,22 @@
 				</div>
 				
 			</nav>
-			
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="row clearfix">
+			<div class="row clearfix">
 		<div class="col-md-12 column">
 			<h3>
 				hello
 			</h3>
 			</div>
-		<div class="col-md-12 column">
-			<h3>
-				韓語 top rank
-			</h3>
-			<table class="table table-striped table-hover">
-				<thead>
-					<tr>
-						<th>
-							Rank
-						</th>
-						<th>
-							Music name
-						</th>
-						<th>
-							Singer
-						</th>
-						<th>
-							Style
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-					include("mysql_connect.inc.php");
-				    $str="SELECT R.排名, M.歌名, S.名稱, ST.名稱  FROM 韓語排行榜 AS R, 歌曲 AS M, 歌手或團體 AS S, 風格 AS ST WHERE R.歌曲ID = M.歌曲ID AND M.演唱者ID = S.演唱者ID AND M.風格ID = ST.風格ID";
-				    $list =mysql_query($str);
-				    while($va = mysql_fetch_row($list))
-				    {
-				    	echo    '<tr><td>';
-						echo 	$va[0];
-						echo    '</td><td>';
-						echo	$va[1];
-						echo    '</td><td>';
-						echo	$va[2];
-						echo    '</td><td>';
-						echo    $va[3];
-						echo	'</td></tr>';
-				    }
-					?>
-
-				</tbody>
-			</table>
 		</div>
 
-	</div>
-</div>
+			
+		
+	
+	
+
 
 </div>
+
 
 
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>

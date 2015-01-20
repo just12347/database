@@ -4,7 +4,7 @@
 //資料庫位置
 $db_server = "localhost";
 //資料庫名稱
-$db_name = "mydb";
+$db_name = "音樂2";
 //資料庫管理者帳號
 $db_user = "root";
 //資料庫管理者密碼
@@ -13,8 +13,6 @@ $db_passwd = "";
 //對資料庫連線
 if(!@mysql_connect($db_server, $db_user, $db_passwd))
         die("無法對資料庫連線");
-else 
-	echo 'connected to database!';
 //資料庫連線採UTF8
 mysql_query("SET NAMES utf8");
 

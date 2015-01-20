@@ -26,13 +26,10 @@ while($va = mysql_fetch_row($list))
 }
 ?>
 </select>
-<?php
-if ($company) {
-	# code...
-}
+
 名字：<input type="text" name="C_name" />
 國籍：<input type="text" name="C_country" />
-?>
+
 <br>
 作詞： <select name="lyricist">
 <?php

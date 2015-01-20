@@ -28,10 +28,59 @@ if($company == 0){
         if(mysql_query($sql))
         {
                 echo '新增公司成功!';
+                $company = $n;
         }
         else
         {
                 echo '新增公司失敗!';
+        }
+}
+if($singer == 0){
+        $str="SELECT 演唱者ID FROM 歌手或團體 ";
+        $list = mysql_query($str);
+        $n = mysql_num_rows($list);
+        $n = $n + 1;
+        $sql = "insert into 歌手或團體 (演唱者ID, 名稱, 國籍, 公司ID) values ('$n', '$S_name', '$S_country', '$company')";
+        if(mysql_query($sql))
+        {
+                echo '新增歌手成功!';
+                $singer = $n;
+        }
+        else
+        {
+                echo '新增歌手失敗!';
+        }
+}
+if($lyricist == 0){
+        $str="SELECT 作詞人ID FROM 作詞人 ";
+        $list = mysql_query($str);
+        $n = mysql_num_rows($list);
+        $n = $n + 1;
+        $sql = "insert into 作詞人 (作詞人ID, 名稱, 國籍) values ('$n', '$L_name', '$L_country')";
+        if(mysql_query($sql))
+        {
+                echo '新增作詞人成功!';
+                $lyricist = $n;
+        }
+        else
+        {
+                echo '新增作詞人失敗!';
+        }
+}
+if($composer == 0){
+        $str="SELECT 作曲人ID FROM 作曲人 ";
+        $list = mysql_query($str);
+        $n = mysql_num_rows($list);
+        $n = $n + 1;
+        $sql = "insert into 作曲人 (作曲人ID, 名稱, 國籍) values ('$n', '$S_name', '$S_country')";
+        if(mysql_query($sql))
+        {
+                echo '新增作曲人成功!';
+                $composer = $n;
+        }
+        else
+        {
+                echo '新增作曲人失敗!';
         }
 }
 
@@ -39,24 +88,28 @@ if($company == 0){
 
 //判斷帳號密碼是否為空值
 //確認密碼輸入的正確性
-if($id != null && $pw != null && $pw2 != null && $pw == $pw2)
+if($M_name != null && $date != null && $length != null)
 {
         //新增資料進資料庫語法
-        $sql = "insert into member_table (username, password, telephone, address, other) values ('$id', '$pw', '$telephone', '$address', '$other')";
+        $str="SELECT 歌曲ID FROM 歌曲 ";
+        $list = mysql_query($str);
+        $n = mysql_num_rows($list);
+        $n = $n + 1;
+        $sql = "insert into 歌曲 (歌曲ID, 名稱, 演唱者ID, 作詞人ID, 作曲人ID, 風格ID, 發行時間, 歌曲長度) values ('$n', '$M_name', '$singer', '$lyricist', '$composer', '$style', '$date', '$length')";
         if(mysql_query($sql))
         {
-                echo '新增成功!';
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+                echo '新增歌曲成功!';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=update.php>';
         }
         else
         {
-                echo '新增失敗!';
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+                echo '新增歌曲失敗!';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=update.php>';
         }
 }
 else
 {
-        echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+        echo '主要資料(歌名, 發行時間, 長度) 不可為空!';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=update.php>';
 }
 ?>

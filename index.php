@@ -45,7 +45,7 @@
 					</ul>
 					<form class="navbar-form navbar-right" role="search" action="search.php">
 						<div class="form-group">
-							<input type="text" class="form-control" />
+							<input type="text" class="form-control" />>
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-left">
@@ -68,7 +68,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#">Update</a>
+							<a href="update.php">Update</a>
 						</li>
 					</ul>
 				</div>

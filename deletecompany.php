@@ -7,6 +7,7 @@
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
         </head> 
+        
 <body>
 <div class="container">
         <div class="row clearfix">
@@ -104,97 +105,25 @@
             </div>
             <div class="row clearfix">
                 <div class="col-md-6 column">
-                    <form name="form" method="POST" action="commitsong.php">
+                    <form name="form" method="POST" action="dcompany.php">
                         <h3>
-                        Song Insertion
+                        Company Deletion
                         </h3>
                         <div class="form-group">
-                            <label for="exampleInputSong">Song Name</label><input type="text" class="form-control" name="M_name" />
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputSinger">Singer</label>
-                            <select class="form-control" name="singer">
-                            <?php
-                            include("mysql_connect.inc.php");
-                            $str="SELECT 演唱者ID, 名稱 FROM 歌手或團體 ";
-                            $list =mysql_query($str);
-                            echo "<option value=0>新歌手</option>\n";
-                            while($va = mysql_fetch_row($list))
-                            {
-                                echo "<option value=$va[0]>$va[1]</option>\n";
-                            }
-                            ?>
-                            </select>
-                            <label for="exampleInputSong">Singer Name</label><input type="text" class="form-control" name="S_name" />
-                            <label for="exampleInputSong">Country</label><input type="text" class="form-control" name="S_country" />
-                            <label for="exampleInputSong">Company</label>
+                            <label for="exampleInputcompany">Company Name</label>
                             <select class="form-control" name="company">
                             <?php
-                            $str="SELECT 公司ID, 公司名稱 FROM 公司 ";
-                            $list =mysql_query($str);
-                            echo "<option value=0>新公司</option>\n";
-                            while($va = mysql_fetch_row($list))
-                            {
-                                echo "<option value=$va[0]>$va[1]</option>\n";
-                            }
-                            ?>
-                            </select>
-                            <label for="exampleInputSong">Company Name</label><input type="text" class="form-control" name="C_name" />
-                            <label for="exampleInputSong">Country</label><input type="text" class="form-control" name="C_country" />
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputlyric">Lyricist</label>
-                            <select class="form-control" name="lyricist">
-                            <?php
-                            $str="SELECT 作詞人ID, 名稱 FROM 作詞人";
-                            $list =mysql_query($str);
-                            echo "<option value=0>新作詞人</option>\n";
-                            while($va = mysql_fetch_row($list))
-                            {
-                            echo "<option value=$va[0]>$va[1]</option>\n";
-                            }
-                            ?>
-                            </select>
-                            <label for="exampleInputSong">Lyricist Name</label><input type="text" class="form-control" name="L_name" />
-                            <label for="exampleInputSong">Country</label><input type="text" class="form-control" name="L_country" />
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputcomposer">Composer</label>
-                            <select class="form-control" name="composer">
-                            <?php
-                            $str="SELECT 作曲人ID, 名稱 FROM 作曲人 ";
-                            $list =mysql_query($str);
-                            echo "<option value=0>新作曲人</option>\n";
-                            while($va = mysql_fetch_row($list))
-                            {
-                            echo "<option value=$va[0]>$va[1]</option>\n";
-                            }
-                            ?>
-                            </select>
-                            <label for="exampleInputSong">Composer Name</label><input type="text" class="form-control" name="L_name" />
-                            <label for="exampleInputSong">Country</label><input type="text" class="form-control" name="L_country" />
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputstyle">Style</label>
-                            <select class="form-control" name="style">
-                            <?php
-                            $str="SELECT 風格ID, 名稱 FROM 風格 ";
+                            include("mysql_connect.inc.php");
+                            $str="SELECT 公司ID, 名稱 FROM 公司";
                             $list =mysql_query($str);
                             echo "<option value=0>請選擇</option>\n";
                             while($va = mysql_fetch_row($list))
                             {
-                            echo "<option value=$va[0]>$va[1]</option>\n";
+                                echo "<option value=$va[0]>$va[1]</option>\n";
                             }
                             ?>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputpublish">Publish Date</label><input type="text" class="form-control" name="date" />
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputlength">Song Length</label><input type="text" class="form-control" name="length" />
-                        </div>
-                        
                         <br>
                         <button type="submit" class="btn btn-default">Submit</button>
                         <br>
@@ -205,13 +134,6 @@
                 </div>
             </div>
         </div>
-
-                        
-                
-        
-        
-
-
 </div>
 
 

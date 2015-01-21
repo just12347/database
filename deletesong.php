@@ -103,56 +103,35 @@
 
             <div class="row clearfix">
                 <div class="col-md-6 column">
-                    <form role="form" method="POST" action="commitalbum.php">
-
-                    	<h3>
-                        Singer Insertion
+                    <form name="form" method="POST" action="dsong.php">
+                        <h3>
+                        Song Deletion
                         </h3>
-						<div class="form-group">
-                            <label for="exampleInputpublish">Singer Name</label><input type="date" class="form-control" name="S_name" />
-                        </div>
                         <div class="form-group">
-                            <label for="exampleInputlength">Country</label><input type="text" class="form-control" name="S_country " />
-                        </div>
-                        <div>
-                        <select class="form-control" name="company">
-
-                        <?php
+                            <label for="exampleInputSong">Song Name</label>
+                            <select class="form-control" name="song">
+                            <?php
                             include("mysql_connect.inc.php");
-
-                            $str="SELECT 公司ID, 公司名稱 FROM 公司 ";
+                            $str="SELECT 歌曲ID, 歌名 FROM 歌曲";
                             $list =mysql_query($str);
-                            echo "<option value=0>新公司</option>\n";
+                            echo "<option value=0>請選擇</option>\n";
                             while($va = mysql_fetch_row($list))
                             {
                                 echo "<option value=$va[0]>$va[1]</option>\n";
                             }
                             ?>
                             </select>
-                            <label for="exampleInputSong">Company Name</label><input type="text" class="form-control" name="C_name" />
-                            <label for="exampleInputSong">Country</label><input type="text" class="form-control" name="C_country" />
-                         </div>   
-                            <label for="exampleInputSong">Album Name</label><input type="text" class="form-control" name="A_name" />
-                            <label for="exampleInputSong">Publish time</label><input type="text" class="form-control" name="A_date" />
-                            <label for="exampleInputSong">Sales</label><input type="text" class="form-control" name="A_sell" />
-
-
+                        </div>
                         <br>
                         <button type="submit" class="btn btn-default">Submit</button>
                         <br>
-                        </form>
-                         </div>
+                    </form>
+
+                </div>
                 <div class="col-md-6 column">
                 </div>
             </div>
         </div>
-
-                        
-                
-        
-        
-
-
 </div>
 
 

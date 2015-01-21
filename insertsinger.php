@@ -1,3 +1,4 @@
+
 <!-- 設定網頁編碼為UTF-8 -->
 <!DOCTYPE html>
 
@@ -108,10 +109,17 @@
                 <div class="col-md-6 column">
                     <form role="form" method="POST" action="commitsinger.php">
 
+
+                        <h3>
+                        Singer Insertion
+                        </h3>
+                        <div class="form-group">
+
                     	<h3>
                         Singer Insertion
                         </h3>
 						<div class="form-group">
+
                             <label for="exampleInputpublish">Singer Name</label><input type="text" class="form-control" name="S_name" />
                         </div>
                         <div class="form-group">

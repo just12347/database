@@ -1,4 +1,5 @@
 
+
 <!-- 設定網頁編碼為UTF-8 -->
 <!DOCTYPE html>
 
@@ -109,10 +110,16 @@
                 <div class="col-md-6 column">
                     <form role="form" method="POST" action="commitlyricist.php">
 
+                        <h3>
+                        Lyricist Insertion
+                        </h3>
+                        <div class="form-group">
+
                     	<h3>
                         Lyricist Insertion
                         </h3>
 						<div class="form-group">
+
                             <label for="exampleInputpublish">Lyricist Name</label><input type="date" class="form-control" name="L_name" />
                         </div>
                         <div class="form-group">
@@ -142,4 +149,6 @@
                 <script src="js/bootstrap.min.js"></script>
                 <script src="js/bootstrap-select.js"></script> 
 </body>
+
 </html>
+

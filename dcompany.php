@@ -67,100 +67,54 @@
 								</li>
 							</ul>
 						</li>
-						<li>
-							<a href="update.php">Update</a>
-						</li>
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Update<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="insertsong.php">歌曲</a>
+                                </li>
+                                <li>
+                                    <a href="insertsinger.php">歌手</a>
+                                </li>
+                                <li>
+                                    <a href="insertcomposer.php">作曲人</a>
+                                </li>
+                                <li>
+                                    <a href="insertlyricist.php">作詞人</a>
+                                </li>
+                                <li>
+                                    <a href="insertalbum.php">專輯</a>
+                                </li>
+                                <li>
+                                    <a href="insertstyle.php">風格</a>
+                                </li>
+                                <li>
+                                       <a href="insertcompany.php">公司</a>
+                                </li>
+                            </ul>
+                        </li>
 					</ul>
 				</div>
-				
 			</nav>
 		<div class="row clearfix">
 		<div class="col-md-12 column">
 			<h3>
 				hello
 			</h3>
-			<h3>
-				Result:
-			</h3>
-			<?php
-            include("mysql_connect.inc.php");
-            $search = @$_POST['search'];
-
-            $sql = "SELECT M.歌曲ID, M.歌名, S.名稱, L.名稱, T.名稱, A.專輯名稱, ST.名稱, M.發行時間, M.歌曲長度 FROM 歌曲 AS M, 歌手或團體 AS S, 作詞人 AS L, 作曲人 AS T, 風格 AS ST, 專輯 AS A, 專輯歌曲 AS ALS WHERE M.演唱者ID = S.演唱者ID AND M.作詞人ID = L.作詞人ID AND M.作曲人ID = T.作曲人ID AND M.風格ID = ST.風格ID AND M.歌曲ID = ALS.歌曲ID AND ALS.專輯ID = A.專輯ID AND (M.歌曲ID = '%$search%' OR M.歌名 LIKE '%$search%' OR ST.名稱 LIKE '%$search%' OR S.名稱 LIKE '%$search%' OR L.名稱 LIKE '%$search%' OR T.名稱 LIKE '%$search%' OR A.專輯名稱 LIKE '%$search%') ORDER BY M.歌曲ID";
-            $list = mysql_query($sql);
-            ?>
-            <table class="table table-striped table-hover">
-				<thead>
-					<tr>
-						<th>
-							ID
-						</th>
-						<th>
-							Music name
-						</th>
-						<th>
-							Singer
-						</th>
-						<th>
-							Lyricist
-						</th>
-						<th>
-							Composer
-						</th>
-						<th>
-							Album
-						</th>
-						<th>
-							Style
-						</th>
-						<th>
-							Publish Date
-						</th>
-						<th>
-							Length
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-				    while($va = mysql_fetch_row($list))
-				    {
-				    	echo    '<tr><td>';
-						echo 	$va[0];
-						echo    '</td><td>';
-						echo	$va[1];
-						echo    '</td><td>';
-						echo	$va[2];
-						echo    '</td><td>';
-						echo	$va[3];
-						echo    '</td><td>';
-						echo	$va[4];
-						echo    '</td><td>';
-						echo	$va[5];
-						echo    '</td><td>';
-						echo	$va[6];
-						echo    '</td><td>';
-						echo	$va[7];
-						echo    '</td><td>';
-						echo    $va[8];
-						echo	'</td></tr>';
-
-				    }
-				    
-					?>
-				</tbody>
-			</table>
-
+                    <?php
+                    include("mysql_connect.inc.php");
+                    $company = @$_POST['company'];
+                        
+                                
+                    $sql = "DELETE FROM 公司 WHERE 公司ID = '$company'";
+                    if(mysql_query($sql)){
+                        echo '<h3>Deletion Success!</h3>';
+                    }     
+                    ?>
+			<a href="index.php" class="btn" type="button">Back to Index</a>
+			<a href="deletecompany.php" class="btn" type="button">Continue Deletion</a>
 			</div>
 		</div>
-
-
-			
-		
-	
-	
-
-
 </div>
 
 

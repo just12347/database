@@ -1,4 +1,4 @@
-  
+
 <!-- 設定網頁編碼為UTF-8 -->
 <!DOCTYPE html>
 
@@ -123,6 +123,7 @@
 
                         <?php
                             include("mysql_connect.inc.php");
+
                             $str="SELECT 公司ID, 公司名稱 FROM 公司 ";
                             $list =mysql_query($str);
                             echo "<option value=0>新公司</option>\n";
@@ -164,6 +165,6 @@
                 <script src="js/bootstrap.min.js"></script>
                 <script src="js/bootstrap-select.js"></script> 
 </body>
+
 </html>
-Status API Training Shop Blog About
-© 2015 GitHub, Inc. Terms Privacy Security Contact
+

@@ -1,18 +1,4 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-just12347 just12347
  
-2  Unwatch 
-  Star 0
- Fork 0just12347/database
- branch: master  database/insertsong.php
-davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/just12347/database
-1 contributor
-224 lines (207 sloc)  13.119 kb RawBlameHistory   
 <!-- 設定網頁編碼為UTF-8 -->
 <!DOCTYPE html>
 
@@ -237,5 +223,3 @@ davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/jus
                 <script src="js/bootstrap-select.js"></script> 
 </body>
 </html>
-Status API Training Shop Blog About
-© 2015 GitHub, Inc. Terms Privacy Security Contact

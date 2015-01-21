@@ -1,18 +1,4 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-just12347 just12347
- 
-2  Unwatch 
-  Star 0
- Fork 0just12347/database
- branch: master  database/insertcompany.php
-davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/just12347/database
-1 contributor
-147 lines (127 sloc)  8.193 kb RawBlameHistory   
+
 
 <!-- 設定網頁編碼為UTF-8 -->
 <!DOCTYPE html>
@@ -124,10 +110,17 @@ davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/jus
                 <div class="col-md-6 column">
                     <form role="form" method="POST"name action="commitcompany.php">
 
+<<<<<<< HEAD
                         <h3>
                         Company Insertion
                         </h3>
                         <div class="form-group">
+
+                    	<h3>
+                        Company Insertion
+                        </h3>
+						<div class="form-group">
+
                             <label for="exampleInputpublish">Company Name</label><input type="date" class="form-control" name="C_name" />
                         </div>
                         <div class="form-group">
@@ -159,6 +152,4 @@ davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/jus
                 <script src="js/bootstrap.min.js"></script>
                 <script src="js/bootstrap-select.js"></script> 
 </body>
-</html>
-Status API Training Shop Blog About
-© 2015 GitHub, Inc. Terms Privacy Security Contact
+\

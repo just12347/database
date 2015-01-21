@@ -1,18 +1,4 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-just12347 just12347
- 
-2  Unwatch 
-  Star 0
- Fork 0just12347/database
- branch: master  database/insertstyle.php
-davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/just12347/database
-1 contributor
-143 lines (124 sloc)  7.953 kb RawBlameHistory   
+
 
 <!-- 設定網頁編碼為UTF-8 -->
 <!DOCTYPE html>
@@ -128,6 +114,12 @@ davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/jus
                         Style Insertion
                         </h3>
                         <div class="form-group">
+
+                    	<h3>
+                        Style Insertion
+                        </h3>
+						<div class="form-group">
+
                             <label for="exampleInputpublish">Style Name</label><input type="date" class="form-control" name="Sty_name" />
                         </div>
 
@@ -155,6 +147,6 @@ davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/jus
                 <script src="js/bootstrap.min.js"></script>
                 <script src="js/bootstrap-select.js"></script> 
 </body>
+
 </html>
-Status API Training Shop Blog About
-© 2015 GitHub, Inc. Terms Privacy Security Contact
+

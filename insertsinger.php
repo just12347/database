@@ -1,18 +1,4 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-just12347 just12347
- 
-2  Unwatch 
-  Star 0
- Fork 0just12347/database
- branch: master  database/insertsinger.php
-davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/just12347/database
-1 contributor
-166 lines (143 sloc)  9.14 kb RawBlameHistory   
+
 <!-- 設定網頁編碼為UTF-8 -->
 <!DOCTYPE html>
 
@@ -123,10 +109,17 @@ davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/jus
                 <div class="col-md-6 column">
                     <form role="form" method="POST" action="commitsinger.php">
 
+
                         <h3>
                         Singer Insertion
                         </h3>
                         <div class="form-group">
+
+                    	<h3>
+                        Singer Insertion
+                        </h3>
+						<div class="form-group">
+
                             <label for="exampleInputpublish">Singer Name</label><input type="text" class="form-control" name="S_name" />
                         </div>
                         <div class="form-group">
@@ -137,6 +130,7 @@ davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/jus
 
                         <?php
                             include("mysql_connect.inc.php");
+
                             $str="SELECT 公司ID, 公司名稱 FROM 公司 ";
                             $list =mysql_query($str);
                             echo "<option value=0>新公司</option>\n";
@@ -177,5 +171,3 @@ davidwangtydavidwangty 13 hours ago Merge branch 'tmp' of https://github.com/jus
 </html>
 
 
-Status API Training Shop Blog About
-© 2015 GitHub, Inc. Terms Privacy Security Contact

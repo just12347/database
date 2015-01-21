@@ -144,7 +144,6 @@
 				</div>	
 			</nav>
 			
-
 			<div class="jumbotron" style="background: url('http://www.drew.edu/undergraduate/wp-content/uploads/sites/106/music1.jpg') no-repeat" >
 				<h1>
 					Music.db

@@ -18,9 +18,6 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li >
-							<a href="sec.php">Sec</a>
-						</li>
-						<li >
                             <a href="guide.php">Guide</a>
                         </li>
 						<li class="dropdown">
@@ -142,6 +139,7 @@
 								</li>
 							</ul>
 						</li>
+						
 					</ul>
 				</div>	
 			</nav>

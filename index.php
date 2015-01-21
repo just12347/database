@@ -67,9 +67,33 @@
 								</li>
 							</ul>
 						</li>
-						<li>
-							<a href="update.php">Update</a>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Update<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="insertsong.php">歌曲</a>
+								</li>
+								<li>
+									<a href="insertsinger.php">歌手</a>
+								</li>
+								<li>
+									<a href="insertcomposer.php">作曲人</a>
+								</li>
+								<li>
+									<a href="insertlyricist.php">作詞人</a>
+								</li>
+								<li>
+									<a href="insertalbum.php">專輯</a>
+								</li>
+								<li>
+									<a href="insertstyle.php">風格</a>
+								</li>
+								<li>
+									<a href="insertcompany.php">公司</a>
+								</li>
+							</ul>
 						</li>
+						
 					</ul>
 				</div>
 				

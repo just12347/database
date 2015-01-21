@@ -5,9 +5,7 @@
 	<head>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 	</head>	
-	
 <body>
 <div class="container">
 	<div class="row clearfix">
@@ -155,13 +153,14 @@
 
 		<div class="col-md-12 column">
 			<h3>
-				R&B top10
+				All R&B Song
 			</h3>
+			
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
 						<th>
-							Rank
+							ID
 						</th>
 						<th>
 							Song 
@@ -176,19 +175,22 @@
 				</thead>
 				<tbody>
 					<?php
-					for($i=0;$i<5;$i++)
-					{
-
-					echo    '<tr><td>';
-					echo 	$i+1;		
-					echo    '</td><td>';
-					echo	'TB - Monthly';
-					echo    '</td><td>';
-					echo	'01/04/2012';
-					echo    '</td><td>';
-					echo    'Default';
-					echo	'</td></tr>';
-					}	?>
+					include("mysql_connect.inc.php");
+				    $str="SELECT M.歌曲ID, M.歌名, S.名稱, ST.名稱  FROM 歌曲 AS M, 歌手或團體 AS S, 風格 AS ST WHERE M.演唱者ID = S.演唱者ID AND M.風格ID = ST.風格ID AND M.風格ID = 4";
+				    $list =mysql_query($str);
+				    while($va = mysql_fetch_row($list))
+				    {
+				    	echo    '<tr><td>';
+						echo 	$va[0];
+						echo    '</td><td>';
+						echo	$va[1];
+						echo    '</td><td>';
+						echo	$va[2];
+						echo    '</td><td>';
+						echo    $va[3];
+						echo	'</td></tr>';
+				    }
+					?>
 				</tbody>
 			</table>	
 		

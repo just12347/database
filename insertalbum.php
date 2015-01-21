@@ -1,4 +1,3 @@
-
 <!-- 設定網頁編碼為UTF-8 -->
 <!DOCTYPE html>
 
@@ -9,10 +8,9 @@
     </head> 
 <body>
 <div class="container">
-
-        <div class="row clearfix">
-                <div class="col-md-12 column">
-                        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+                    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.php">Index</a>
                 </div>
@@ -145,7 +143,6 @@
                     </ul>
                 </div>  
             </nav>
-    
             <div class="row clearfix">
                 <div class="col-md-12 column">
                     <h3>
@@ -157,22 +154,37 @@
             <div class="row clearfix">
                 <div class="col-md-6 column">
                     <form role="form" method="POST" action="commitalbum.php">
-
                     	<h3>
-                        Singer Insertion
+                        Album Insertion
                         </h3>
 						<div class="form-group">
-                            <label for="exampleInputpublish">Singer Name</label><input type="date" class="form-control" name="S_name" />
+                            <label for="exampleInputpublish">Album Name</label><input type="text" class="form-control" name="A_name" />
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputlength">Country</label><input type="text" class="form-control" name="S_country " />
+                            <label for="exampleInputlength">Publish date</label><input type="date" class="form-control" name="A_date" />
                         </div>
-                        <div>
-                        <select class="form-control" name="company">
-
-                        <?php
+                        <div class="form-group">
+                            <label for="exampleInputlength">Sales</label><input type="text" class="form-control" name="A_sale" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputSinger">Singer</label>
+                            <select class="form-control" name="singer">
+                            <?php
                             include("mysql_connect.inc.php");
-
+                            $str="SELECT 演唱者ID, 名稱 FROM 歌手或團體 ";
+                            $list =mysql_query($str);
+                            echo "<option value=0>新歌手</option>\n";
+                            while($va = mysql_fetch_row($list))
+                            {
+                                echo "<option value=$va[0]>$va[1]</option>\n";
+                            }
+                            ?>
+                            </select>
+                            <label for="exampleInputSong">Singer Name</label><input type="text" class="form-control" name="S_name" />
+                            <label for="exampleInputSong">Country</label><input type="text" class="form-control" name="S_country" />
+                            <label for="exampleInputSong">Company</label>
+                            <select class="form-control" name="company">
+                            <?php
                             $str="SELECT 公司ID, 公司名稱 FROM 公司 ";
                             $list =mysql_query($str);
                             echo "<option value=0>新公司</option>\n";
@@ -184,21 +196,20 @@
                             </select>
                             <label for="exampleInputSong">Company Name</label><input type="text" class="form-control" name="C_name" />
                             <label for="exampleInputSong">Country</label><input type="text" class="form-control" name="C_country" />
-                         </div>   
-                            <label for="exampleInputSong">Album Name</label><input type="text" class="form-control" name="A_name" />
-                            <label for="exampleInputSong">Publish time</label><input type="text" class="form-control" name="A_date" />
-                            <label for="exampleInputSong">Sales</label><input type="text" class="form-control" name="A_sell" />
-
-
-                        <br>
+                        </div>
+                         <br>
                         <button type="submit" class="btn btn-default">Submit</button>
                         <br>
                         </form>
-                         </div>
                 <div class="col-md-6 column">
                 </div>
             </div>
         </div>
+
+                        
+                
+        
+        
 
 
 </div>

@@ -146,13 +146,13 @@
 			
 			<div class="jumbotron" style="background: url('http://www.drew.edu/undergraduate/wp-content/uploads/sites/106/music1.jpg') no-repeat" >
 				<h1>
-					Music.db
+					WHYMusic.db
 				</h1>
 				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+					W stands for Wang, H stands for Hsiao, Y stands for Yang; Three web developers of WHYMusic
 				</p>
 				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
+					<a class="btn btn-primary btn-large" href="guide.php">Learn more</a>
 				</p>
 			</div>
 		</div>

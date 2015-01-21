@@ -159,17 +159,14 @@
                     <form role="form" method="POST"name action="commitcompany.php">
 
 
-                        <h3>
-                        Company Insertion
-                        </h3>
-                        <div class="form-group">
+                       
 
                     	<h3>
                         Company Insertion
                         </h3>
 						<div class="form-group">
 
-                            <label for="exampleInputpublish">Company Name</label><input type="date" class="form-control" name="C_name" />
+                            <label for="exampleInputpublish">Company Name</label><input type="text" class="form-control" name="C_name" />
                         </div>
                         <div class="form-group">
                             <label for="exampleInputlength">Country</label><input type="text" class="form-control" name="C_country " />

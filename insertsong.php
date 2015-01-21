@@ -220,8 +220,8 @@
                             }
                             ?>
                             </select>
-                            <label for="exampleInputSong">Composer Name</label><input type="text" class="form-control" name="L_name" />
-                            <label for="exampleInputSong">Country</label><input type="text" class="form-control" name="L_country" />
+                            <label for="exampleInputSong">Composer Name</label><input type="text" class="form-control" name="Cr_name" />
+                            <label for="exampleInputSong">Country</label><input type="text" class="form-control" name="Cr_country" />
                         </div>
                         <div class="form-group">
                             <label for="exampleInputstyle">Style</label>
@@ -238,7 +238,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputpublish">Publish Date</label><input type="text" class="form-control" name="date" />
+                            <label for="exampleInputpublish">Publish Date</label><input type="date" class="form-control" name="date" />
                         </div>
                         <div class="form-group">
                             <label for="exampleInputlength">Song Length</label><input type="text" class="form-control" name="length" />

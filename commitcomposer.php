@@ -144,8 +144,9 @@
 						
 					</ul>
 				</div>	
-			</nav>
+		</nav>
 		<div class="row clearfix">
+	
 		<div class="col-md-12 column">
 			<h3>
 				hello
@@ -156,17 +157,33 @@
                         
                         $Cr_name = @$_POST['Cr_name'];
                         $Cr_country = @$_POST['Cr_country'];
+                        $err = '請輸入 ';
+                        $chk = 0;
                         
-                        $str="SELECT 作曲人ID FROM 作曲人 ";
-                        $list = mysql_query($str);
-                        $n = mysql_num_rows($list);
-                        $n = $n + 1;
-                        $sql = "insert into 作曲人 (作曲人ID, 名稱, 國籍) values ('$n', '$S_name', '$S_country')";
-                        if(!mysql_query($sql))
-                        {
-                                echo '新增作曲人失敗!<br>';
-                        }
-                        ?>
+                        if($Cr_country != null && $Cr_name != null && $chk==0)
+                        {	
+	                        $str="SELECT 作曲人ID FROM 作曲人 ";
+	                        $list = mysql_query($str);
+	                        $n = mysql_num_rows($list);
+	                        $n = $n + 1;
+	                        $sql = "insert into 作曲人 (作曲人ID, 名稱, 國籍) values ('$n', '$S_name', '$S_country')";
+	                        if(!mysql_query($sql))
+	                        {
+	                                echo '新增作曲人失敗!<br>';
+	                        }
+	                    }
+	                    else
+	                    {
+	                    	$chk=1;
+	                    	$err=$err.'作曲人資訊';
+	                    }
+	                    if($chk==1)
+	                    {
+	                    	 echo "<h3>Insertion Fail</h3><br>";
+                            echo $err."<br>";
+	                    }
+	                    ?>
+	                    
 			<a href="index.php" class="btn" type="button">Back to Index</a>
 			<a href="update.php" class="btn" type="button">Continue Insertion</a>
 			</div>

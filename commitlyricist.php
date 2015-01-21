@@ -154,17 +154,32 @@
                         include("mysql_connect.inc.php");
 
                         $L_name = @$_POST['L_name'];
-                        $L_country = @$_POST['L_country'];  
-                                      
-                        $str="SELECT 作詞人ID FROM 作詞人 ";
-                        $list = mysql_query($str);
-                        $n = mysql_num_rows($list);
-                        $n = $n + 1;
-                        $sql = "insert into 作詞人 (作詞人ID, 名稱, 國籍) values ('$n', '$L_name', '$L_country')";
-                        if(!mysql_query($sql))
+                        $L_country = @$_POST['L_country']; 
+                        $err = '請輸入 ';
+                        $chk = 0;
+
+                        if($L_name != null && $L_country != null && $chk==0)              
                         {
-                            echo '新增作詞人失敗!<br>';
-                        }
+	                        $str="SELECT 作詞人ID FROM 作詞人 ";
+	                        $list = mysql_query($str);
+	                        $n = mysql_num_rows($list);
+	                        $n = $n + 1;
+	                        $sql = "insert into 作詞人 (作詞人ID, 名稱, 國籍) values ('$n', '$L_name', '$L_country')";
+	                        if(!mysql_query($sql))
+	                        {
+	                            echo '新增作詞人失敗!<br>';
+	                        }
+	                    }
+	                    else
+	                    {
+	                    	$chk=1;
+	                    	$err=$err.'作詞人資訊';
+	                    }  
+	                    if($chk==1)
+	                    {
+	                    	 echo "<h3>Insertion Fail</h3><br>";
+                            echo $err."<br>";
+	                    }
                         ?>
 			<a href="index.php" class="btn" type="button">Back to Index</a>
 			<a href="update.php" class="btn" type="button">Continue Insertion</a>

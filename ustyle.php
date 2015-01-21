@@ -5,14 +5,21 @@
 	<head>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 	</head>	
-	
+<body>
+<!-- 設定網頁編碼為UTF-8 -->
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>	
 <body>
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+						<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.php">Index</a>
 				</div>
@@ -145,79 +152,40 @@
 					</ul>
 				</div>	
 			</nav>
-		<div class="row clearfix">
-		<div class="col-md-12 column">
-			<h3>
-				hello
-			</h3>
-                        <?php
-                        include("mysql_connect.inc.php");
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<h3>
+						hello
+					</h3>
+				</div>
+			</div>
 
-                        $S_name = @$_POST['S_name'];
-                        $S_country = @$_POST['S_country'];
-                        $company = @$_POST['company'];
-                        $C_name = @$_POST['C_name'];
-                        $C_country = @$_POST['C_country'];
-                        $err = '請輸入 ';
-                        $chk = 0;
+            <?php
+            include("mysql_connect.inc.php");
+            $style = @$_POST['style'];
+           
+            $Sty_name = @$_POST['Sty_name'];
+            if($style!=0)
+            {	
+            $sql = "update 公司 set 	 名稱 = '$Sty_name' where 風格ID=$style";
+            if(mysql_query($sql)){
+                echo '<h3>Update Success!</h3>';
+            }else{
+            	echo '修改公司失敗!<br>';
+            }
+        	}
+        	else
+        	{
+        		
+        		echo  '<h3>Please choose what style to update!!</h3><br>';
 
-                        if($company == 0 && $C_name!=0 && $C_country!=0){
-                                $str="SELECT 公司ID, 公司名稱 FROM 公司 ";
-                                $list = mysql_query($str);
-                                $n = mysql_num_rows($list);
-                                $n = $n + 1;
-                                $company =$n;
-                                $sql = "insert into 公司 (公司ID, 公司名稱, 國籍) values ('$n', '$C_name', '$C_country')";
-                                if(!mysql_query($sql))
-                                {
-                                        echo '新增公司失敗!<br>';
-                                }
-                        }
-                        elseif($company==0)
-                        {
-                        	$chk=1;
-                        	$err=$err.'公司資訊 ';
-                        }
-						if($S_name!=null && $S_country!=null && $chk == 0)
-						{                       
-                        $str="SELECT 演唱者ID FROM 歌手或團體 ";
-                        $list = mysql_query($str);
-                        $n = mysql_num_rows($list);
-                        $n = $n + 1;
-                         $sql = "insert into 歌手或團體 (演唱者ID, 名稱, 國籍, 公司ID) values ('$n', '$S_name', '$S_country', '$company')";
-                        	if(!mysql_query($sql))
-	                        {
-	                                echo '新增歌手失敗!<br>';
-	                        }
-                    	}
-                    	else
-                    	{
-                    		$chk=1;
-                    		$err=$err.'歌手資訊 ';
-                    	}
-
-                    	if($chk==1)
-                    	{
-                    		echo "<h3>Insertion Fail</h3><br>";
-                            echo $err."<br>";
-                    	}
-                        ?>
+        	}
+            ?>
 			<a href="index.php" class="btn" type="button">Back to Index</a>
-			<a href="update.php" class="btn" type="button">Continue Insertion</a>
+			<a href="updatestyle.php" class="btn" type="button">Continue Update</a>
 			</div>
 		</div>
-
-
-			
-		
-	
-	
-
-
 </div>
-
-
-
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 </body>

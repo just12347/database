@@ -5,14 +5,12 @@
 	<head>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 	</head>	
-	
 <body>
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+						<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.php">Index</a>
 				</div>
@@ -145,79 +143,49 @@
 					</ul>
 				</div>	
 			</nav>
-		<div class="row clearfix">
-		<div class="col-md-12 column">
-			<h3>
-				hello
-			</h3>
-                        <?php
-                        include("mysql_connect.inc.php");
-
-                        $S_name = @$_POST['S_name'];
-                        $S_country = @$_POST['S_country'];
-                        $company = @$_POST['company'];
-                        $C_name = @$_POST['C_name'];
-                        $C_country = @$_POST['C_country'];
-                        $err = '請輸入 ';
-                        $chk = 0;
-
-                        if($company == 0 && $C_name!=0 && $C_country!=0){
-                                $str="SELECT 公司ID, 公司名稱 FROM 公司 ";
-                                $list = mysql_query($str);
-                                $n = mysql_num_rows($list);
-                                $n = $n + 1;
-                                $company =$n;
-                                $sql = "insert into 公司 (公司ID, 公司名稱, 國籍) values ('$n', '$C_name', '$C_country')";
-                                if(!mysql_query($sql))
-                                {
-                                        echo '新增公司失敗!<br>';
-                                }
-                        }
-                        elseif($company==0)
-                        {
-                        	$chk=1;
-                        	$err=$err.'公司資訊 ';
-                        }
-						if($S_name!=null && $S_country!=null && $chk == 0)
-						{                       
-                        $str="SELECT 演唱者ID FROM 歌手或團體 ";
-                        $list = mysql_query($str);
-                        $n = mysql_num_rows($list);
-                        $n = $n + 1;
-                         $sql = "insert into 歌手或團體 (演唱者ID, 名稱, 國籍, 公司ID) values ('$n', '$S_name', '$S_country', '$company')";
-                        	if(!mysql_query($sql))
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<h3>
+						hello
+					</h3>
+				</div>
+			</div>
+				<form name="form" method="POST" action="ualbum.php">
+	                <h3>
+	                	 Album Update
+	                </h3>
+	                <div class="form-group">
+	                    <label for="exampleInputSong">Which Album You want to change?</label>
+	                    <select class="form-control" name="album">
+	                    	<?php
+	                        include("mysql_connect.inc.php");
+	                        $str="SELECT 專輯ID, 專輯名稱 FROM 專輯 ";
+	                        $list =mysql_query($str);
+	                        echo "<option value=0>請選擇</option>\n";
+	                        while($va = mysql_fetch_row($list))
 	                        {
-	                                echo '新增歌手失敗!<br>';
+	                            echo "<option value=$va[0]>$va[1]</option>\n";
 	                        }
-                    	}
-                    	else
-                    	{
-                    		$chk=1;
-                    		$err=$err.'歌手資訊 ';
-                    	}
-
-                    	if($chk==1)
-                    	{
-                    		echo "<h3>Insertion Fail</h3><br>";
-                            echo $err."<br>";
-                    	}
-                        ?>
-			<a href="index.php" class="btn" type="button">Back to Index</a>
-			<a href="update.php" class="btn" type="button">Continue Insertion</a>
+	                        ?>
+	                    </select>
+	                </div>
+	               
+	                <div class="form-group">
+                        <label for="exampleInputSong">Album Name</label><input type="text" class="form-control" name="A_name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputSong">Publish Date</label><input type="date" class="form-control" name="date" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputSong">Sales</label><input type="text" class="form-control" name="sales" />
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <br>
+				</form>
 			</div>
 		</div>
-
-
-			
-		
-	
-	
-
-
 </div>
-
-
-
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 </body>

@@ -151,100 +151,82 @@
                         <?php
                         include("mysql_connect.inc.php");
 
-                        $M_name = @$_POST['M_name'];
+                        $A_name = @$_POST['A_name'];
+                        $A_date = @$_POST['A_date'];
+                        $A_sale = @$_POST['A_sale'];
                         $singer = @$_POST['singer'];
                         $S_name = @$_POST['S_name'];
                         $S_country = @$_POST['S_country'];
                         $company = @$_POST['company'];
                         $C_name = @$_POST['C_name'];
                         $C_country = @$_POST['C_country'];
-                        $lyricist = @$_POST['lyricist'];
-                        $L_name = @$_POST['L_name'];
-                        $L_country = @$_POST['L_country'];
-                        $composer = @$_POST['composer'];
-                        $date = @$_POST['date'];
-                        $Cr_name = @$_POST['Cr_name'];
-                        $Cr_country = @$_POST['Cr_country'];
-                        $style = @$_POST['style'];
-                        $length = @$_POST['length'];
-
-                        if($company == 0){
+                        $err = '請輸入 ';
+                        $chk = 0;
+                         if($company==0 && $C_name!=null){
                                 $str="SELECT 公司ID, 公司名稱 FROM 公司 ";
                                 $list = mysql_query($str);
                                 $n = mysql_num_rows($list);
                                 $n = $n + 1;
+                                $company =$n;
                                 $sql = "insert into 公司 (公司ID, 公司名稱, 國籍) values ('$n', '$C_name', '$C_country')";
                                 if(!mysql_query($sql))
                                 {
                                         echo '新增公司失敗!<br>';
-                                }
+                                }   
                         }
-                        if($singer == 0){
+                        elseif($company==0 && $singer==0)
+                        {
+                            $chk=1;
+                            $err=$err.'公司名稱 ';
+                        }
+                        if($singer == 0 && $S_name!=null){
                                 $str="SELECT 演唱者ID FROM 歌手或團體 ";
                                 $list = mysql_query($str);
                                 $n = mysql_num_rows($list);
                                 $n = $n + 1;
+                                $singer = $n;
                                 $sql = "insert into 歌手或團體 (演唱者ID, 名稱, 國籍, 公司ID) values ('$n', '$S_name', '$S_country', '$company')";
                                 if(!mysql_query($sql))
                                 {
                                         echo '新增歌手失敗!<br>';
                                 }
                         }
-                        if($lyricist == 0){
-                                $str="SELECT 作詞人ID FROM 作詞人 ";
-                                $list = mysql_query($str);
-                                $n = mysql_num_rows($list);
-                                $n = $n + 1;
-                                $sql = "insert into 作詞人 (作詞人ID, 名稱, 國籍) values ('$n', '$L_name', '$L_country')";
-                                if(!mysql_query($sql))
-                                {
-                                        echo '新增作詞人失敗!<br>';
-                                }
-                        }
-                        if($composer == 0){
-                                $str="SELECT 作曲人ID FROM 作曲人 ";
-                                $list = mysql_query($str);
-                                $n = mysql_num_rows($list);
-                                $n = $n + 1;
-                                $sql = "insert into 作曲人 (作曲人ID, 名稱, 國籍) values ('$n', '$S_name', '$S_country')";
-                                if(!mysql_query($sql))
-                                {
-                                        echo '新增作曲人失敗!<br>';
-                                }
-                        }
+                        elseif($singer==0)
+                        {
 
-                        if($M_name != null && $date != null && $length != null)
+                            $chk=1;
+                            $err=$err.'歌手名稱 ';
+                        }
+                        if($A_name != null && $A_date != null && $A_sale != null && $chk==0)
                         {
                                 //新增資料進資料庫語法
-                                $str="SELECT 歌曲ID FROM 歌曲 ";
+                                $str="SELECT 專輯ID FROM 專輯 ";
                                 $list = mysql_query($str);
                                 $n = mysql_num_rows($list);
                                 $n = $n + 1;
-                                $sql = "insert into 歌曲 (歌曲ID, 歌名, 演唱者ID, 作詞人ID, 作曲人ID, 風格ID, 發行時間, 歌曲長度) values ('$n', '$M_name', '$singer', '$lyricist', '$composer', '$style', '$date', '$length')";
+                                $sql = "insert into 專輯 (專輯ID, 專輯名稱, 發行時間, 銷售量) values ('$n', '$A_name', '$A_date', '$A_sale')";
                                 if(mysql_query($sql))
                                 {
                                         echo '<h3>Insertion success!</h3>';
-                                        $sql = "insert into 作曲 (作曲人ID, 歌曲ID) values ('$composer', '$n')";
+                                        $sql = "insert into 專輯歌手 (專輯ID, 歌手ID) values ('$n', '$singer')";
                                         if(!mysql_query($sql)){
-                                                echo '新增作曲失敗!<br>';
-                                        }
-                                        $sql = "insert into 作詞 (作詞人ID, 歌曲ID) values ('$lyricist', '$n')";
-                                        if(!mysql_query($sql)){
-                                                echo '新增作詞失敗!<br>';
-                                        }
-                                        $sql = "insert into 演唱 (歌ID, 演唱者ID) values ('$n', '$singer')";
-                                        if(!mysql_query($sql)){
-                                                echo '新增演唱失敗!<br>';
+                                                echo '新增專輯歌手失敗!<br>';
                                         }
                                 }
                                 else
                                 {
-                                        echo '新增歌曲失敗!<br>';
+                                        echo '新增專輯失敗!<br>';
                                 }
                         }
                         else
                         {
-                                echo '主要資料(歌名, 發行時間, 長度) 不可為空!<br>';
+                                $chk=1;
+                                $err=$err."專輯資訊";
+                        }
+                        if($chk==1)
+                        {
+                            echo "<h3>Insertion Fail</h3><br>";
+                            echo $err."<br>";
                         }
                         ?>
 			<a href="index.php" class="btn" type="button">Back to Index</a>

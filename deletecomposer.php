@@ -190,4 +190,4 @@
                 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
                 <script src="js/bootstrap.min.js"></script>
                 <script src="js/bootstrap-select.js"></script> 
-</body>composer
+</body>

@@ -7,10 +7,19 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>	
 <body>
+<!-- 設定網頁編碼為UTF-8 -->
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>	
+<body>
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+						<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.php">Index</a>
 				</div>
@@ -139,68 +148,44 @@
 								</li>
 							</ul>
 						</li>
+						
 					</ul>
 				</div>	
 			</nav>
 			<div class="row clearfix">
-		<div class="col-md-12 column">
-			<h3>
-				hello
-			</h3>
+				<div class="col-md-12 column">
+					<h3>
+						hello
+					</h3>
+				</div>
+			</div>
+
+            <?php
+            include("mysql_connect.inc.php");
+            $lyricist = @$_POST['lyricist'];
+            $L_ID = @$_POST['L_ID'];
+            $L_name = @$_POST['L_name'];
+            $country = @$_POST['L_country'];
+            if($lyricist!=0)
+            {	
+            $sql = "update 作詞人 set  名稱 = '$L_name', 國籍 = $L_country where 作詞人ID=$lyricist";
+            if(mysql_query($sql)){
+                echo '<h3>Update Success!</h3>';
+            }else{
+            	echo '修改作詞人失敗!<br>';
+            }}
+            else
+        	{
+        		
+        		echo  '<h3>Please choose what lyricist to update!!</h3><br>';
+
+        	}
+            ?>
+			<a href="index.php" class="btn" type="button">Back to Index</a>
+			<a href="updatelyricist.php" class="btn" type="button">Continue Update</a>
 			</div>
 		</div>
-		<div class="col-md-12 column">
-			<h3>
-				All Brainwash Song	
-			</h3>
-			<table class="table table-striped table-hover">
-				<thead>
-					<tr>
-						<th>
-							ID
-						</th>
-						<th>
-							Song 
-						</th>
-						<th>
-							Singer
-						</th>
-						<th>
-							Style
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-					include("mysql_connect.inc.php");
-				    $str="SELECT M.歌曲ID, M.歌名, S.名稱, ST.名稱  FROM 歌曲 AS M, 歌手或團體 AS S, 風格 AS ST WHERE M.演唱者ID = S.演唱者ID AND M.風格ID = ST.風格ID AND M.風格ID = 2";
-				    $list =mysql_query($str);
-				    while($va = mysql_fetch_row($list))
-				    {
-				    	echo    '<tr><td>';
-						echo 	$va[0];
-						echo    '</td><td>';
-						echo	$va[1];
-						echo    '</td><td>';
-						echo	$va[2];
-						echo    '</td><td>';
-						echo    $va[3];
-						echo	'</td></tr>';
-				    }
-					?>
-				</tbody>
-			</table>
-
-			
-		
-	
-	
-
-
 </div>
-
-
-
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 </body>

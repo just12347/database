@@ -163,7 +163,7 @@
                             <select class="form-control" name="company">
                             <?php
                             include("mysql_connect.inc.php");
-                            $str="SELECT 公司ID, 名稱 FROM 公司";
+                            $str="SELECT 公司ID, 公司名稱 FROM 公司";
                             $list =mysql_query($str);
                             echo "<option value=0>請選擇</option>\n";
                             while($va = mysql_fetch_row($list))

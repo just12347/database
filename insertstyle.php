@@ -158,17 +158,13 @@
                 <div class="col-md-6 column">
                     <form role="form" method="POST"name action="commitstyle.php">
 
-                        <h3>
-                        Style Insertion
-                        </h3>
-                        <div class="form-group">
-
+                       
                     	<h3>
                         Style Insertion
                         </h3>
 						<div class="form-group">
 
-                            <label for="exampleInputpublish">Style Name</label><input type="date" class="form-control" name="Sty_name" />
+                            <label for="exampleInputpublish">Style Name</label><input type="neme" class="form-control" name="Sty_name" />
                         </div>
 
                          <br>

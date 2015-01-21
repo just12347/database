@@ -10,7 +10,7 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+						<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.php">Index</a>
 				</div>
@@ -139,68 +139,50 @@
 								</li>
 							</ul>
 						</li>
+						
 					</ul>
 				</div>	
 			</nav>
 			<div class="row clearfix">
-		<div class="col-md-12 column">
-			<h3>
-				hello
-			</h3>
+				<div class="col-md-12 column">
+					<h3>
+						hello
+					</h3>
+				</div>
+			</div>
+				<form name="form" method="POST" action="ulyricist.php">
+	                <h3>
+	                	 Lyricist Update
+	                </h3>
+	                <div class="form-group">
+	                    <label for="exampleInputSong">Which Lyricist You want to change?</label>
+	                    <select class="form-control" name="lyricist">
+	                    	<?php
+	                        include("mysql_connect.inc.php");
+	                        $str="SELECT 作詞人ID, 名稱 FROM 作詞人 ";
+	                        $list =mysql_query($str);
+	                        echo "<option value=0>請選擇</option>\n";
+	                        while($va = mysql_fetch_row($list))
+	                        {
+	                            echo "<option value=$va[0]>$va[1]</option>\n";
+	                        }
+	                        ?>
+	                    </select>
+	                </div>
+	              
+	                <div class="form-group">
+                        <label for="exampleInputSong">Lyricist Name</label><input type="text" class="form-control" name="L_name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputSong">Lyricist Country</label><input type="text" class="form-control" name="L_country" />
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <br>
+				</form>
 			</div>
 		</div>
-		<div class="col-md-12 column">
-			<h3>
-				All Brainwash Song	
-			</h3>
-			<table class="table table-striped table-hover">
-				<thead>
-					<tr>
-						<th>
-							ID
-						</th>
-						<th>
-							Song 
-						</th>
-						<th>
-							Singer
-						</th>
-						<th>
-							Style
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-					include("mysql_connect.inc.php");
-				    $str="SELECT M.歌曲ID, M.歌名, S.名稱, ST.名稱  FROM 歌曲 AS M, 歌手或團體 AS S, 風格 AS ST WHERE M.演唱者ID = S.演唱者ID AND M.風格ID = ST.風格ID AND M.風格ID = 2";
-				    $list =mysql_query($str);
-				    while($va = mysql_fetch_row($list))
-				    {
-				    	echo    '<tr><td>';
-						echo 	$va[0];
-						echo    '</td><td>';
-						echo	$va[1];
-						echo    '</td><td>';
-						echo	$va[2];
-						echo    '</td><td>';
-						echo    $va[3];
-						echo	'</td></tr>';
-				    }
-					?>
-				</tbody>
-			</table>
-
-			
-		
-	
-	
-
-
 </div>
-
-
-
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 </body>

@@ -158,17 +158,14 @@
                 <div class="col-md-6 column">
                     <form role="form" method="POST"name action="commitcomposer.php">
 
-                        <h3>
-                        Composer Insertion
-                        </h3>
-                        <div class="form-group">
+                       
 
                     	<h3>
                         Composer Insertion
                         </h3>
 						<div class="form-group">
 
-                            <label for="exampleInputpublish">Composer Name</label><input type="date" class="form-control" name="Cr_name" />
+                            <label for="exampleInputpublish">Composer Name</label><input type="text" class="form-control" name="Cr_name" />
                         </div>
                         <div class="form-group">
                             <label for="exampleInputlength">Country</label><input type="text" class="form-control" name="Cr_country " />

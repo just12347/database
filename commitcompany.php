@@ -152,17 +152,33 @@
                         <?php
                         include("mysql_connect.inc.php");
 
-                        $Sty_name = @$_POST['Sty_name'];
+                        $C_name = @$_POST['C_name'];
+                        $C_country= @$_POST['C_country'];
+                        $err = '請輸入 ';
+                        $chk = 0;
                         
-                        $str="SELECT 風格ID FROM 風格 ";
-                        $list = mysql_query($str);
-                        $n = mysql_num_rows($list);
-                        $n = $n + 1;
-                        $sql = "insert into 風格 (風格ID, 名稱) values ('$n', '$Sty_name')";
-                        if(!mysql_query($sql))
+                        if($C_name != null && $C_country != null && $chk==0)
                         {
-                                echo '新增風格失敗!<br>';
-                        }
+                        	$str="SELECT 公司ID FROM 公司 ";
+	                        $list = mysql_query($str);
+	                        $n = mysql_num_rows($list);
+	                        $n = $n + 1;
+	                        $sql = "insert into 公司 (公司ID, 名稱, 國籍) values ('$n', '$C_name', 'C_country')";
+	                        if(!mysql_query($sql))
+	                        {
+	                                echo '新增公司失敗!<br>';
+	                        }
+	                    } 
+	                    else
+	                    {
+	                    	$chk=1;
+	                    	$err=$err.'公司資訊';
+	                    }
+	                    if($chk==1)
+                    	{
+                    		echo "<h3>Insertion Fail</h3><br>";
+                            echo $err."<br>";
+                    	}
                         ?>
 			<a href="index.php" class="btn" type="button">Back to Index</a>
 			<a href="update.php" class="btn" type="button">Continue Insertion</a>

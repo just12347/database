@@ -158,11 +158,6 @@
                     <form role="form" method="POST" action="commitsinger.php">
 
 
-                        <h3>
-                        Singer Insertion
-                        </h3>
-                        <div class="form-group">
-
                     	<h3>
                         Singer Insertion
                         </h3>
@@ -174,6 +169,7 @@
                             <label for="exampleInputlength">Country</label><input type="text" class="form-control" name="S_country" />
                         </div>
                         <div>
+                        <label for="exampleInputSong">Company</label>
                         <select class="form-control" name="company">
 
                         <?php
